@@ -1,0 +1,42 @@
+app:
+  host: 0.0.0.0
+  port: 8080
+
+log:
+  train_comp: train_comp.txt
+  train_pipeline: train_pipeline_log.txt
+  upload: upload_log.txt
+
+log_dir: app_logs
+
+pipeline_path:
+  pred: phising-pred.zip
+  train: phising-train.zip
+
+run_name: phising-run
+
+s3_bucket:
+  components: phising-kubeflow-components-4efdbdc
+  io_files: phising-io-files-03e0100
+  logs: phising-logs-4e1f3bd
+
+templates:
+  dir: templates
+  index: index.html
+
+train_components:
+  clustering: phising-clustering.yaml
+  preprocessing: phising-preprocess-train.yaml
+  load_prod: phising-prod.yaml
+  raw_data_val: phising-raw-data-val.yaml
+  data_trans: phising-train-data-transform.yaml
+  db_operation: phising-train-db.yaml
+  model: phising-train.yaml
+
+
+pred_components:
+  pred_data_trans: phising-pred-data-transform.yaml
+  pred_db_op: phising-pred-db.yaml
+  model: phising-prediction.yaml
+  preprocessing: phising-preprocess-pred.yaml
+  raw_data_val: phising-raw-data-val.yaml
