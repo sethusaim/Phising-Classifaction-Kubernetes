@@ -1,0 +1,36 @@
+s3_bucket:
+  io_files: phising-io-files-03e0100
+  model: phising-model-3e502a3
+  logs: phising-logs-4e1f3bd
+  feature_store: phising-feature-store-02126f6
+  component: phising-kubeflow-components-4efdbdc
+
+files:
+  features: phising_train_features.csv
+  targets: phising_train_targets.csv
+  elbow_plot: K-Means_Elbow_train.png
+
+log:
+  clustering: train_clustering_log.txt
+  upload: upload_train_cluster_log.txt
+
+log_dir: logs
+
+base:
+  random_state: 42
+
+model_dir:
+  trained: trained
+
+KMeans:
+  init: k-means++
+
+max_clusters: 11
+
+model_save_format: .sav
+
+knee:
+  curve: convex
+  direction: decreasing
+
+component: clustering_component.yaml
